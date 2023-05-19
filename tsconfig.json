@@ -1,0 +1,48 @@
+// https://www.typescriptlang.org/docs/handbook/compiler-options.html
+// Strategy (further information, please check this module's README.md):
+// * Typescript engine is going to be only used for local development.
+//   * ESLint and Jest are integrated with this configuration.
+// * Local running and bundling is in charge of vite.js.
+{
+  "buildOptions": {
+    "force": false
+  },
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": false,
+    "allowUmdGlobalAccess": false,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "baseUrl": ".",
+    "checkJs": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "preserveConstEnums": true,
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "strict": true,
+    "target": "ES2022",
+    "types": ["jest", "node"]
+  },
+  "exclude": ["./node/*", "./node_modules/*"],
+  "extends": [
+    "@tsconfig/node-lts/tsconfig.json",
+    "@tsconfig/recommended/tsconfig.json"
+  ],
+  "include": ["./config/**/*.ts", "./src/**/*.ts", "./src/**/*.tsx"],
+  "typeAcquisition": {
+    "enable": true
+  },
+  "useDefineForClassFields": true
+}

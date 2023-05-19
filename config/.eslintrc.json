@@ -1,0 +1,40 @@
+{
+  "env": {
+    "browser": false,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "standard-with-typescript",
+    "prettier",
+    "prettier/prettier",
+    "plugin:prettier/recommended",
+    "plugin:json-schema-validator/recommended",
+    "plugin:jsonc/recommended-with-jsonc",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "tsConfigRootDir": "."
+  },
+  "overrides": [
+    {
+      "env": {
+        "jest": true
+      },
+      "files": ["src/**/*.test.tsx", "config/**/*", "__tests__/**/*"]
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "plugins": ["@typescript-eslint"],
+      "rules": {}
+    }
+  ]
+}
