@@ -1,3 +1,7 @@
+import { server as slave, port as masterPort } from './feature/slave.js';
+import { server as master, port as slavePort } from './feature/master.js';
+
 export default {};
 
-export const sum = (a: number, b: number): number => a + b;
+slave.listen(masterPort);
+master.listen(slavePort);
